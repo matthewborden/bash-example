@@ -3,6 +3,6 @@ steps:
     command: "script.sh"
     agents:
       queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
-  - abel: ":hammer: Only for trigger steps "
+  - label: ":hammer: Only for trigger steps "
     command: ./scripts/tests.sh
     if: build.source == 'trigger_job' && build.env('BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG') == 'bash-example'
